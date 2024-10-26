@@ -2,11 +2,21 @@
     "version": 2,
     "builds": [
       {
+        "src": "index.js",
+        "use": "@vercel/node"
+      },
+      {
         "src": "api/send-otp.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "api/verifyOtp.js",
         "use": "@vercel/node"
       }
     ],
     "routes": [
-      { "src": "/api/send-otp", "dest": "api/send-otp.js" }
+      { "src": "/api/send-otp", "dest": "api/send-otp.js" },
+      { "src": "/api/verify-otp", "dest": "api/verifyOtp.js" }
     ]
   }
+  
