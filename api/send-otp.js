@@ -20,10 +20,12 @@ const sendOtp = async (req, res, otpStorage) => {
 
     // Create a nodemailer transporter
     let transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: 'smtp.gmail.com',
+      port: 587, // or 465 for SSL
+      secure: false, // true for 465, false for other ports
       auth: {
-        user: process.env.EMAIL,
-        pass: process.env.PASSWORD,
+        user: process.env.EMAIL, // your Gmail address
+        pass: process.env.PASSWORD, // your Gmail password or app password
       },
     });
 
